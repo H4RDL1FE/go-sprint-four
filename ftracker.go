@@ -15,7 +15,7 @@ const (
 )
 
 // distance возвращает дистанцию(в километрах), которую преодолел пользователь за время тренировки.
-//
+// Vlad Privet
 // Параметры:
 //
 // action int — количество совершенных действий (число шагов при ходьбе и беге, либо гребков при плавании).
@@ -75,15 +75,15 @@ func ShowTrainingInfo(action int, trainingType string, duration, weight, height 
 
 	switch trainingType {
 	case "Бег":
-		dist = distance(action) // distance
+		dist = distance(action)
 		speed = meanSpeed(action, duration)
 		calories = RunningSpentCalories(action, weight, duration)
 	case "Ходьба":
-		dist = distance(action) // distance
+		dist = distance(action)
 		speed = meanSpeed(action, duration)
 		calories = WalkingSpentCalories(action, duration, weight, height)
 	case "Плавание":
-		dist = float64(lengthPool) * float64(countPool) / mInKm // Расчет дистанции для плавания
+		dist = float64(lengthPool) * float64(countPool) / mInKm
 		speed = swimmingMeanSpeed(lengthPool, countPool, duration)
 		calories = SwimmingSpentCalories(lengthPool, countPool, duration, weight)
 	default:
