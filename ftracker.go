@@ -75,11 +75,11 @@ func ShowTrainingInfo(action int, trainingType string, duration, weight, height 
 
 	switch trainingType {
 	case "Бег":
-		dist = distance(action) // Использование функции distance
+		dist = distance(action) // distance
 		speed = meanSpeed(action, duration)
 		calories = RunningSpentCalories(action, weight, duration)
 	case "Ходьба":
-		dist = distance(action) // Использование функции distance
+		dist = distance(action) // distance
 		speed = meanSpeed(action, duration)
 		calories = WalkingSpentCalories(action, duration, weight, height)
 	case "Плавание":
