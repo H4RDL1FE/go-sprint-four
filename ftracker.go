@@ -83,11 +83,12 @@ func ShowTrainingInfo(action int, trainingType string, duration, weight, height 
 		speed = meanSpeed(action, duration)
 		calories = WalkingSpentCalories(action, duration, weight, height)
 	case "Плавание":
-		dist = float64(lengthPool) * float64(countPool) / mInKm
+		//	dist = float64(lengthPool) * float64(countPool) / mInKm
+		dist = distance(action)
 		speed = swimmingMeanSpeed(lengthPool, countPool, duration)
 		calories = SwimmingSpentCalories(lengthPool, countPool, duration, weight)
 	default:
-		return "Неизвестный тип тренировки"
+		return "неизвестный тип тренировки"
 	}
 
 	return fmt.Sprintf("Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n",
