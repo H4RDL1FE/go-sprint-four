@@ -165,8 +165,15 @@ func TestShowTrainingInfo(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := ShowTrainingInfo(tt.args.action, tt.args.trainingType, tt.args.duration, tt.args.weight, tt.args.height, tt.args.lengthPool, tt.args.countPool); got != tt.want {
-				t.Errorf("ShowTrainingInfo() = %v, want %v", got, tt.want)
+			if got := ShowTrainingInfo(
+				tt.args.action,
+				tt.args.trainingType,
+				tt.args.duration,
+				tt.args.weight,
+				tt.args.height,
+				tt.args.lengthPool,
+				tt.args.countPool); got != tt.want {
+				t.Errorf("ShowTrainingInfo() = [%v], want [%v]", got, tt.want)
 			}
 		})
 	}
